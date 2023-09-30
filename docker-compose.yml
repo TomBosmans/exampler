@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: exemplar_app
+    build: .
+    stdin_open: true
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+
+  postgres:
+    container_name: exemplar_postgres
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=""
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:

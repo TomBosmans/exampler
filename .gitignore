@@ -1,4 +1,6 @@
-node_modules
 .env
 .env.development
 .env.test
+assets/tailwind.css
+assets/web-components.js
+node_modules

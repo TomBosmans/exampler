@@ -3,14 +3,19 @@
   "module": "src/index.ts",
   "type": "module",
   "dependencies": {
+    "@kitajs/html": "^3.0.0",
+    "@kitajs/ts-html-plugin": "^1.1.1",
     "drizzle-orm": "^0.28.6",
     "postgres": "^3.3.5",
     "zod": "^3.22.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "bun-types": "latest",
+    "daisyui": "^3.8.2",
     "drizzle-kit": "^0.19.13",
-    "prettier": "3.0.3"
+    "prettier": "3.0.3",
+    "tailwindcss": "^3.3.3"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -23,6 +28,10 @@
     "db:migration:update": "drizzle-kit up:pg",
     "db:migration:check": "drizzle-kit check:pg",
     "db:migrate:dev": "bun run scripts/db-migrate.ts",
-    "db:migrate:test": "DATABASE_NAME=test bun run scripts/db-migrate.ts"
+    "db:migrate:test": "DATABASE_NAME=test bun run scripts/db-migrate.ts",
+    "web-components:build": "WATCH_WEB_COMPONENTS=false bun run scripts/build-web-components.ts",
+    "web-components:watch": "WATCH_WEB_COMPONENTS=true bun run scripts/build-web-components.ts",
+    "tailwind:build": "bun run tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css",
+    "tailwind:watch": "bun run tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --watch"
   }
 }

@@ -1,5 +1,7 @@
+/// <reference types="@kitajs/html/htmx.d.ts" />
 /// <reference lib="dom" />
 /// <reference lib="dom.iterable" />
+/// <reference types="./types/web-components.d.ts" />
 
 import { join } from "path"
 import App from "./lib/app"

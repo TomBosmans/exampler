@@ -25,9 +25,12 @@ export const MimeType = {
   excel: "application/vnd.ms-excel",
   word: "application/msword",
   powerPoint: "application/vnd.ms-powerpoint",
-  excelOpenXML: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-  wordOpenXML: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  powerPointOpenXML: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  excelOpenXML:
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  wordOpenXML:
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  powerPointOpenXML:
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation",
   csv: "text/csv",
   zip: "application/zip",
   tar: "application/x-tar",
@@ -71,4 +74,4 @@ export const MimeType = {
   wfs: "application/vnd.ogc.wfs_xml",
 } as const
 
-export type MimeType = typeof MimeType[keyof typeof MimeType]
+export type MimeType = (typeof MimeType)[keyof typeof MimeType]

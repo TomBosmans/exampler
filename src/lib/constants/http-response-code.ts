@@ -46,4 +46,5 @@ export const HttpResponseCode = {
   HTTPVersionNotSupported: 505,
 } as const
 
-export type HttpResponseCode = typeof HttpResponseCode[keyof typeof HttpResponseCode]
+export type HttpResponseCode =
+  (typeof HttpResponseCode)[keyof typeof HttpResponseCode]

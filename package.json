@@ -1,31 +1,28 @@
 {
   "name": "exemplar",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
-  "scripts": {
-    "lint": "prettier --write",
-    "lint:check": "prettier",
-    "start:dev": "dotenv -e .env.development -- tsx watch --no-warnings src src/index.ts",
-    "db:migration:generate": "dotenv -e .env.development -- drizzle-kit generate:pg",
-    "db:migration:update": "dotenv -e .env.development -- drizzle-kit up:pg",
-    "db:migration:check": "dotenv -e .env.development -- drizzle-kit check:pg",
-    "db:migrate:dev": "dotenv -e .env.development -- node scripts/db-migrate.mjs",
-    "db:migrate:test": "dotenv -e .env.test -- node scripts/db-migrate.mjs"
-  },
-  "author": "Tom Bosmans",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^20.8.0",
-    "dotenv-cli": "^7.3.0",
-    "drizzle-kit": "^0.19.13",
-    "prettier": "3.0.3",
-    "tsx": "^3.13.0",
-    "typescript": "^5.2.2"
-  },
+  "module": "src/index.ts",
+  "type": "module",
   "dependencies": {
     "drizzle-orm": "^0.28.6",
     "postgres": "^3.3.5",
     "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "drizzle-kit": "^0.19.13",
+    "prettier": "3.0.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "lint": "prettier --write",
+    "lint:check": "prettier",
+    "start:dev": "bun run --watch src/index.ts",
+    "db:migration:generate": "drizzle-kit generate:pg",
+    "db:migration:update": "drizzle-kit up:pg",
+    "db:migration:check": "drizzle-kit check:pg",
+    "db:migrate:dev": "bun run scripts/db-migrate.ts",
+    "db:migrate:test": "DATABASE_NAME=test bun run scripts/db-migrate.ts"
   }
 }

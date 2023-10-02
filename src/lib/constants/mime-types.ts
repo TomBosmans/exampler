@@ -1,3 +1,7 @@
+/**
+ * @enum {string} Enumeration of common MIME types and their corresponding strings.
+ * @readonly
+ */
 export const MimeType = {
   html: "text/html",
   json: "application/json",
@@ -74,4 +78,4 @@ export const MimeType = {
   wfs: "application/vnd.ogc.wfs_xml",
 } as const
 
-export type MimeType = (typeof MimeType)[keyof typeof MimeType]
+export type MimeType = (typeof MimeType)[keyof typeof MimeType] | (string & {})

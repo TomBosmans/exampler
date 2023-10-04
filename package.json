@@ -5,15 +5,16 @@
   "dependencies": {
     "@kitajs/html": "^3.0.0",
     "@kitajs/ts-html-plugin": "^1.1.1",
-    "drizzle-orm": "^0.28.6",
-    "postgres": "^3.3.5",
+    "kysely": "^0.26.3",
+    "pg": "^8.11.3",
     "zod": "^3.22.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "@types/pg": "^8.10.3",
     "bun-types": "latest",
     "daisyui": "^3.8.2",
-    "drizzle-kit": "^0.19.13",
+    "kysely-codegen": "^0.10.1",
     "prettier": "3.0.3",
     "tailwindcss": "^3.3.3"
   },
@@ -21,17 +22,19 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "lint": "prettier --write",
+    "db:generate:migration": "bun scripts/db/generate-migration.ts --name",
+    "db:generate:types": "bun scripts/db/generate-types.ts",
+    "db:migrate:down:dev": "bun scripts/db/migrate-down.ts",
+    "db:migrate:down:test": "DATABASE_NAME=test bun scripts/db/migrate-down.ts",
+    "db:migrate:up:dev": "bun scripts/db/migrate-up.ts",
+    "db:migrate:up:test": "DATABASE_NAME=test bun scripts/db/migrate-up.ts",
     "lint:check": "prettier",
-    "start:dev": "bun run --watch src/index.ts",
-    "db:migration:generate": "drizzle-kit generate:pg",
-    "db:migration:update": "drizzle-kit up:pg",
-    "db:migration:check": "drizzle-kit check:pg",
-    "db:migrate:dev": "bun run scripts/db-migrate.ts",
-    "db:migrate:test": "DATABASE_NAME=test bun run scripts/db-migrate.ts",
-    "web-components:build": "WATCH_WEB_COMPONENTS=false bun run scripts/build-web-components.ts",
-    "web-components:watch": "WATCH_WEB_COMPONENTS=true bun run scripts/build-web-components.ts",
+    "lint:write": "prettier --write",
+    "start:prod": "bun run src/index.ts",
+    "start:watch": "bun --hot src/index.ts",
     "tailwind:build": "bun run tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css",
-    "tailwind:watch": "bun run tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --watch"
+    "tailwind:watch": "bun run tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --watch",
+    "web-components:build": "WATCH_WEB_COMPONENTS=false bun run scripts/build-web-components.ts",
+    "web-components:watch": "WATCH_WEB_COMPONENTS=true bun run scripts/build-web-components.ts"
   }
 }

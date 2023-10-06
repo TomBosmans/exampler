@@ -11,11 +11,26 @@
     "strict": true,
     "downlevelIteration": true,
     "skipLibCheck": true,
+    "jsx": "react",
+    "jsxFactory": "Html.createElement",
+    "jsxFragmentFactory": "Html.Fragment",
+    "plugins": [{ "name": "@kitajs/ts-html-plugin" }],
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "types": [
       "bun-types" // add Bun global
-    ]
+    ],
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@core/*": ["./src/lib/core/*"],
+      "@basic-container": ["./src/lib/basic-container"],
+      "@basic-logger": ["./src/lib/basic-logger"],
+      "@basic-router": ["./src/lib/basic-router"],
+      "@config": ["./src/config"],
+      "@constants": ["./src/constants"],
+      "@db": ["./src/db"],
+    }
   }
 }

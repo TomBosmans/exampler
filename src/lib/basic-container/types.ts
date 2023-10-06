@@ -1,4 +1,4 @@
-import { RegisterData } from "../core/container"
+import { RegisterData } from "@core/container"
 
 export type RegisterItem = {
   type: RegisterData["type"]

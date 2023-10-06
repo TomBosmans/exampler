@@ -1,6 +1,6 @@
 import { expect, describe, it } from "bun:test"
 import BasicRouter from "./basic-router"
-import Route from "../core/route"
+import Route from "@core/route"
 
 describe("BasicRouter", () => {
   const router = new BasicRouter()

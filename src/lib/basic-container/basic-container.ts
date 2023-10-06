@@ -1,8 +1,8 @@
-import Container, { RegisterData } from "../core/container"
 import findFilesMatchingPattern from "./utils/find-files-matching-pattern"
 import typeOf from "./utils/type-of"
-import { ClassType, FunctionType } from "../types"
+import { ClassType, FunctionType } from "@utils/types"
 import { Registry } from "./types"
+import Container, { RegisterData } from "@core/container"
 
 export default class BasicContainer implements Container {
   private registry: Registry = {}

@@ -1,6 +1,6 @@
 import Handler from "./handler"
-import parsePath from "../utils/parse-path"
-import { HttpMethod } from "../constants"
+import parsePath from "@utils/parse-path"
+import { HttpMethod } from "@constants"
 
 type RouteParams = {
   path: string

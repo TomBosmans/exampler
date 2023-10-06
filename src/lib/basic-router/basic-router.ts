@@ -1,8 +1,8 @@
-import Route from "../core/route"
-import Router from "../core/router"
-import parsePath from "../utils/parse-path"
+import Route from "@core/route"
+import Router from "@core/router"
+import parsePath from "@utils/parse-path"
 import sortRoutes from "./utils/sort-routes"
-import { HttpMethod } from "../constants"
+import { HttpMethod } from "@constants"
 
 type MatchResponse = {
   route: Route | null

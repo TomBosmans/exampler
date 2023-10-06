@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "bun:test"
 import BasicContainer from "./basic-container"
-import Container from "../core/container"
+import Container from "@core/container"
 
 describe("BasicContainer", () => {
   let container: Container

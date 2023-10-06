@@ -1,4 +1,4 @@
-import { ClassType, FunctionType } from "../types"
+import { ClassType, FunctionType } from "@utils/types"
 
 export type RegisterData = {
   name: string

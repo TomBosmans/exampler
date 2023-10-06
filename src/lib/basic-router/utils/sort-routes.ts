@@ -1,4 +1,4 @@
-import Route from "../core/route"
+import Route from "@core/route"
 
 export default function sortRoutes(routes: Route[]) {
   return routes.sort((a, b) => {

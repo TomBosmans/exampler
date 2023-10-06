@@ -1,3 +1,5 @@
+import toBoolean from "@utils/transformers/to-boolean"
+import toNumber from "@utils/transformers/to-number"
 import { z } from "zod"
 
 const configSchema = z
@@ -5,14 +7,14 @@ const configSchema = z
     NODE_ENV: z
       .enum(["test", "development", "production"])
       .default("development"),
-    PORT: z.preprocess(Number, z.number()),
-    DATABASE_PORT: z.preprocess(Number, z.number()),
+    PORT: z.preprocess(toNumber, z.number()),
+    DATABASE_PORT: z.preprocess(toNumber, z.number()),
     DATABASE_USER: z.string(),
     DATABASE_HOST: z.string(),
     DATABASE_NAME: z.string(),
     DATABASE_PASSWORD: z.string(),
-    WATCH_WEB_COMPONENTS: z.preprocess((v) => v === "true", z.boolean()),
-    PASSWORD_SALT_ROUNDS: z.preprocess(Number, z.number()),
+    WATCH_WEB_COMPONENTS: z.preprocess(toBoolean, z.boolean()),
+    PASSWORD_SALT_ROUNDS: z.preprocess(toNumber, z.number()),
   })
   .transform((data) => ({
     env: data.NODE_ENV,

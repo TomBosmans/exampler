@@ -23,6 +23,7 @@
   },
   "scripts": {
     "db:generate:dump": "bun src/scripts/db/generate-dump.ts",
+    "db:generate:functions": "bun src/scripts/db/generate-functions.ts",
     "db:generate:migration": "bun src/scripts/db/generate-migration.ts --name",
     "db:generate:types": "bun src/scripts/db/generate-types.ts",
     "db:migrate:down:dev": "bun src/scripts/db/migrate-down.ts",

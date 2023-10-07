@@ -4,16 +4,14 @@ import { z } from "zod"
 
 const configSchema = z
   .object({
-    NODE_ENV: z
-      .enum(["test", "development", "production"])
-      .default("development"),
+    NODE_ENV: z.enum(["test", "development", "production"]).default("development"),
     PORT: z.preprocess(toNumber, z.number()),
     DATABASE_PORT: z.preprocess(toNumber, z.number()),
     DATABASE_USER: z.string(),
     DATABASE_HOST: z.string(),
     DATABASE_NAME: z.string(),
     DATABASE_PASSWORD: z.string(),
-    WATCH_WEB_COMPONENTS: z.preprocess(toBoolean, z.boolean()),
+    WATCH_WEB_COMPONENTS: z.preprocess(toBoolean, z.boolean().default(false)),
     PASSWORD_SALT_ROUNDS: z.preprocess(toNumber, z.number()),
   })
   .transform((data) => ({

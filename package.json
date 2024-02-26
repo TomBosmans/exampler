@@ -5,8 +5,10 @@
   "dependencies": {
     "@kitajs/html": "^3.0.0",
     "@kitajs/ts-html-plugin": "^1.1.1",
+    "cli-highlight": "^2.1.11",
     "kysely": "^0.26.3",
     "pg": "^8.11.3",
+    "redis": "^4.6.10",
     "zod": "^3.22.2"
   },
   "devDependencies": {

@@ -1,7 +1,4 @@
-import isBlank from "@utils/conditionals/is-blank"
-import isBoolean from "@utils/conditionals/is-boolean"
-import isDate from "@utils/conditionals/is-date"
-import isString from "@utils/conditionals/is-string"
+import * as c from "@utils/conditionals"
 
 /**
  * Converts a string, Date object, or boolean to a number.
@@ -18,9 +15,9 @@ import isString from "@utils/conditionals/is-string"
  * toNumber({}); // Error: can't be cast to number
  */
 export default function toNumber(value: unknown) {
-  if (isBlank(value)) return value
-  if (isString(value)) return Number(value)
-  if (isDate(value)) return Number(value)
-  if (isBoolean(value)) return Number(value)
+  if (c.isBlank(value)) return value
+  if (c.isString(value)) return Number(value)
+  if (c.isDate(value)) return Number(value)
+  if (c.isBoolean(value)) return Number(value)
   throw Error("can't be cast to number")
 }

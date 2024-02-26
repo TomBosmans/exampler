@@ -23,14 +23,16 @@
     ],
     "paths": {
       "@app/*": ["./src/app/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@core/*": ["./src/lib/core/*"],
-      "@basic-container": ["./src/lib/basic-container"],
-      "@basic-logger": ["./src/lib/basic-logger"],
-      "@basic-router": ["./src/lib/basic-router"],
+      "@schemas/*": ["./src/app/schemas/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@components/*": ["./src/components/*"],
       "@config": ["./src/config"],
-      "@constants": ["./src/constants"],
+      "@utils/*": ["./src/utils/*"],
       "@db": ["./src/db"],
+      "@redis": ["./src/redis"],
+      "@web-components/*": ["./src/web-components/*"],
+      "@types": ["./src/types"],
+      "@core/*": ["./src/lib/core/*"]
     }
   }
 }

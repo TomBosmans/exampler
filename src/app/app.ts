@@ -1,11 +1,11 @@
-import BasicContainer from "@basic-container"
-import BasicLogger from "@basic-logger"
-import BasicRouter from "@basic-router"
-import Container from "@core/container"
-import Handler from "@core/handler"
-import Logger from "@core/logger"
-import Route from "@core/route"
-import Router from "@core/router"
+import BasicContainer from "@lib/basic-container"
+import BasicLogger from "@lib/basic-logger"
+import BasicRouter from "@lib/basic-router"
+import Container from "@lib/core/container"
+import Handler from "@lib/core/handler"
+import Logger from "@lib/core/logger"
+import Route from "@lib/core/route"
+import Router from "@lib/core/router"
 import { Errorlike, Server } from "bun"
 
 type AppStartParams = {
@@ -45,8 +45,7 @@ export default class App {
     notFoundHandler,
     logger = new BasicLogger(),
     modules = [
-      /\.middleware\.(ts|tsx)$/,
-      /\.service\.(ts|tsx)$/,
+      /\.injectable\.(ts|tsx)$/,
       /\.route\.(ts|tsx)$/,
     ],
     publicPath = "public",

@@ -3,4 +3,5 @@ export default interface Logger {
   warn(value: unknown): void
   log(value: unknown): void
   error(value: unknown): void
+  sql(sql: string, params: unknown): void
 }

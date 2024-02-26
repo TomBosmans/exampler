@@ -1,5 +1,5 @@
 import { Pool } from "pg"
-import { DB } from "kysely-codegen"
+import type { DB } from "kysely-codegen"
 import * as k from "kysely"
 import config from "../config"
 
@@ -14,8 +14,8 @@ const dialect = new k.PostgresDialect({
 })
 
 const db = new k.Kysely<DB>({ dialect })
+export type { DB } from "kysely-codegen"
 export default db
-export const queryBuilder = <T extends keyof DB>() => k.expressionBuilder<DB, T>()
 export type Database = typeof db
 export { sql } from "kysely"
-export type QueryBuilder<T extends keyof DB> = k.ExpressionBuilder<DB, T>
+export type SelectQuery<Table extends keyof DB> = k.SelectQueryBuilder<DB, Table, {}>

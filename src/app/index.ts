@@ -5,9 +5,10 @@
 
 import "@kitajs/html/register"
 import App from "./app"
-import config from "../config"
+import config from "@config"
 import db from "@db"
 import notFoundHandler from "./routes/not-found/not-found.handler"
+import redis from "@redis"
 import { join } from "path"
 
 const app = new App({
@@ -18,5 +19,6 @@ const app = new App({
 })
 
 app.container.register(db, { name: "db", type: "value" })
+app.container.register(redis, { name: "redis", type: "value" })
 app.container.register(config, { name: "config", type: "value" })
 app.start({ port: config.port, development: config.env === "development" })

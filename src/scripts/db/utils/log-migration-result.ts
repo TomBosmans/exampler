@@ -6,7 +6,7 @@ export default function logMigrationResult({
 }: MigrationResultSet) {
   results?.forEach((result) => {
     if (result.status === "Success") {
-      console.log(
+      console.info(
         `migration "${result.migrationName}" was executed successfully`,
       )
     } else if (result.status === "Error") {

@@ -21,8 +21,8 @@ SET row_security = off;
 --
 
 COPY public.kysely_migration (name, "timestamp") FROM stdin;
-20231004T154603-create-users-table	2023-10-07T15:06:58.494Z
-20231006T214350-add-created-at-to-users	2023-10-07T15:36:28.850Z
+20231004T154603-create-users-table	2023-10-14T16:14:35.242Z
+20231006T214350-add-created-at-to-users	2023-10-14T16:14:35.247Z
 \.
 
 

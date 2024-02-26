@@ -1,7 +1,4 @@
-import isBlank from "@utils/conditionals/is-blank"
-import isBoolean from "@utils/conditionals/is-boolean"
-import isNumber from "@utils/conditionals/is-number"
-import isString from "@utils/conditionals/is-string"
+import * as c from "@utils/conditionals"
 
 /**
  * Converts a value to a boolean.
@@ -23,9 +20,9 @@ import isString from "@utils/conditionals/is-string"
  * toBoolean(''); // false
  */
 export default function toBoolean(value: unknown) {
-  if (isBlank(value)) return value
-  if (isBoolean(value)) return value
-  if (isString(value)) return value.toLowerCase() === "true"
-  if (isNumber(value)) return value === 1
+  if (c.isBlank(value)) return value
+  if (c.isBoolean(value)) return value
+  if (c.isString(value)) return value.toLowerCase() === "true"
+  if (c.isNumber(value)) return value === 1
   return false
 }
